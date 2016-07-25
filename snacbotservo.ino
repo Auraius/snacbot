@@ -3,7 +3,7 @@ This is a publisher & suscriber method to control which box to open. Control ser
 
 to control: 1. roscore 2.rostopic pub servo std_msgs/UInt16  <motor#>
 */ 
-
+#include <ros.h>
 #if defined(ARDUINO) && ARDUINO >= 100
   #include "Arduino.h"
 #else
@@ -11,7 +11,7 @@ to control: 1. roscore 2.rostopic pub servo std_msgs/UInt16  <motor#>
 #endif
 
 #include <Servo.h> 
-#include <ros.h>
+//
 #include <std_msgs/UInt16.h>
 
 ros::NodeHandle  nh;
