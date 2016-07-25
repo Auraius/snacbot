@@ -1,4 +1,6 @@
 /* 
+This is a publisher & suscriber method to control which box to open. Control servo with rosserial and an Arduino. 
+
 to control: 1. roscore 2.rostopic pub servo std_msgs/UInt16  <motor#>
 */ 
 
@@ -63,8 +65,3 @@ void loop(){
 	nh.spinOnce();
 	delay(1);
 }
-
-
-
-
-
