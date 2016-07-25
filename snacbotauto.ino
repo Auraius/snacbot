@@ -1,6 +1,8 @@
+// the following allows the user to open and close the snacbot repeatedly
+
 #include <Servo.h>
 
-// motors 6 & 11 go too far
+// motors 1 & 2 (pins 6 & 11) are attached differently & have been adjusted accordingly 
 
 int pins[4] = [10,6,11,9]
 
