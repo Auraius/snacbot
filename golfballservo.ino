@@ -1,7 +1,7 @@
 /* 
 to control: 1. roscore 2.rostopic pub golfBall std_msgs/UInt16  <on/On or off/Off>
 */ 
-
+#include <ros.h>
 #if defined(ARDUINO) && ARDUINO >= 100
   #include "Arduino.h"
 #else
@@ -9,7 +9,7 @@ to control: 1. roscore 2.rostopic pub golfBall std_msgs/UInt16  <on/On or off/Of
 #endif
 
 #include <Servo.h> 
-#include <ros.h>
+//
 #include <std_msgs/UInt16.h>
 
 ros::NodeHandle  nh;
