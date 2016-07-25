@@ -1,9 +1,5 @@
 This consists of short bits of code (that are not really meant to be used or downloaded together) to run the robots from varius capstone projects.
 
-Golf,ino: when downloaded to the golf ball dispenser, it does as one would expect and continually dispenses golf balls. 
+auto: no interaction, just runs the motors repetedly. These work. 
 
-snacbotauto: this just opens all the containers, keeps it open for a couple of seconds (so one can take our his or her snack) then closes all of the containers. 
-
-snacbotservo: publisher & suscriber method of controlling snacbot boxes w/ rosserial & arduino
-
-If you want to run the snacbot w/ the turtlebot & the app, you can find it here: https://github.com/FSGRIS
+servo: uses roserial & arduino to run motors. You publish a topic through the terminal. Note: because I just changed the snacbot one & just finished the golf one both of them still need to be tested out!!!
