@@ -14,6 +14,7 @@ https://github.com/FSGRIS
 
 snacasaurus: 
 https://github.com/snackasaurus
+http://snackasaurus.tumblr.com/
 
 
 
