@@ -12,5 +12,8 @@ snacbot:
 http://fsgris.tumblr.com/
 https://github.com/FSGRIS
 
+snacasaurus: 
+https://github.com/snackasaurus
+
 
 
