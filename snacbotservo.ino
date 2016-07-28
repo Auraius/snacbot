@@ -1,7 +1,7 @@
 /* 
 This is a publisher & suscriber method to control which box to open. Control servo with rosserial and an Arduino. 
 
-to control: 1. roscore 2.rostopic pub servo std_msgs/UInt16  <motor#>
+to control: 1. roscore 2.rostopic pub snacbot std_msgs/UInt16  <motor#>
 */ 
 #include <ros.h>
 #if defined(ARDUINO) && ARDUINO >= 100
@@ -48,7 +48,7 @@ void open_close(const std_msgs::UInt16& cmd_msg){
 	}
 }
 
-ros::Subscriber<std_msgs::UInt16> sub("servo", open_close);
+ros::Subscriber<std_msgs::UInt16> sub("snacbot", open_close);
 
 lose
 
