@@ -1,46 +1,66 @@
-// the following allows the user to open and close the snacbot repeatedly
 
-#include <Servo.h>
+//to control: 1. roscore 2.rosrun rosserial_python serial_node.py /dev/ttyACM0 3.rostopic pub servo std_msgs/UInt16
+// Rather than using various loops I have done each motor seperatly so it is easier to change the boxes (from what they are currently labeled)
+# include <ros.h>
 
-// motors 1 & 2 (pins 6 & 11) are attached differently & have been adjusted accordingly 
+# if defined(ARDUINO) && ARDUINO >= 100 
+  #include "Arduino.h"
+# else 
+  #include <wprogram.h>
+# endif
 
-int pins[4] = [10,6,11,9]
+# include <Servo.h>
 
-int pos = 10;
+# include <std_msgs/UInt16.h>
 
-void setup () {
-	int i;
-	for (i=0; i<4; i++) {
-		servos[i].attach(pins[i]);
-	}
+ros::NodeHandle  nh;
+
+Servo servo0;
+Servo servo1;
+Servo servo2;
+Servo servo3;
+
+void servo_box( const std_msgs::UInt16& cmd_msg){
+  int a = cmd_msg.data;
+   if (a == 0) {
+    servo0.write(80); 
+    delay(5000);
+    servo0.write(10);
+   }
+   if (a == 1) {
+    servo1.write(110); 
+    delay(5000);
+    servo1.write(170);
+    } 
+   if (a == 2) {
+    servo2.write(110); 
+    delay(5000);
+    servo2.write(170);
+   }
+   if (a == 3) {
+    servo3.write(80); 
+    delay(5000);
+    servo3.write(10);
+   }
+   
 }
 
-void loop () {
-	for (pos = 10; pos <=80; pos += 1) {
-	
-		int i;
-		for (i=1; i<4; i++) {
-			if (i=1 || i=2) {
-				servos[i].write(180-pos);
-				delay(10);
-			}
-			else {
-				servos[i].write(pos);
-				delay(10);
-			}
-		}
-		}
-	for (pos = 80; pos >= 80; pos -= 1) {
-		int j;
-		for (j=1; j<4; j++) {
-			if (i=2 || i=3) {
-				servos[i].write(180-pos);
-				delay(10);
-			}
-			else {
-				servos[i].write(pos);
-				delay(10);
-			}
-		}
-		}
+ros::Subscriber<std_msgs::UInt16> sub("servo", servo_box);
+
+void setup(){
+  pinMode(13, OUTPUT);
+
+  nh.initNode();
+  nh.subscribe(sub);
+
+  servo0.attach(8);
+  servo1.attach(6);
+  servo2.attach(9);
+  servo3.attach(10);
+ 
+}
+
+void loop() {
+  nh.spinOnce();
+  delay(1);
 }
