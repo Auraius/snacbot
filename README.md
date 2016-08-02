@@ -1,23 +1,10 @@
-This consists of short bits of code (that are not really meant to be used or downloaded together) to run the robots from varius capstone projects.
+This consists of short bits of code (that are not really meant to be used together) to run the robots from varius capstone projects.
 
-auto: no interaction, just runs the motors repetedly. These work. 
+auto: no interaction, just runs the motors (has the devices run) repetedly
 
-servo: uses roserial & arduino to run motors. You publish a topic through the terminal. You need to do the arduino IDE setup which can be found here: http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup
+servo: uses roserial & arduino to run motors (control the devices). You need to do the arduino IDE setup prior to this.
 
-Chokabot: 
-http://chockabot.tumblr.com/
 
-https://github.com/chockabot/chockabot
-
-snacbot:
-http://fsgris.tumblr.com/
-
-https://github.com/FSGRIS
-
-snacasaurus: 
-https://github.com/snackasaurus
-
-http://snackasaurus.tumblr.com/
 
 
 
